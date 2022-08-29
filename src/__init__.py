@@ -1,1 +1,1 @@
-from hexplot.hexagon import Hexagons, Pixel
+from .hexagon import Hexagons, Pixel

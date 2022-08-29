@@ -1,4 +1,4 @@
-from hexplot import Hexagons
+from src import Hexagons
 
 import numpy as np
 import matplotlib.pyplot as plt
