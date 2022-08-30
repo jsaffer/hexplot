@@ -28,9 +28,9 @@ class Hexagons:
 
     def draw(self):
         for j in range(len(self.midpointsx)):
-            corners = [hex_corner(i, self.orientation, self.midpointsx[j], self.midpointsy[j], self.size) for i in range(6)]
+            corners = [hex_corner(i, self.orientation[j], self.midpointsx[j], self.midpointsy[j], self.size[j]) for i in range(6)]
             for i in range(6):
-                self.ax.plot([corners[i-1][0], corners[i][0]], [corners[i-1][1], corners[i][1]], color=self.color)
+                self.ax.plot([corners[i-1][0], corners[i][0]], [corners[i-1][1], corners[i][1]], color=self.color[j])
 
     def show(self, save=False, figfilename=''):
         self.ax.axis('equal')

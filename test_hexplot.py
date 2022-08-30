@@ -28,28 +28,6 @@ icetop_y = allpixels_y[icetop_mask]
 icetop_padding_x = allpixels_x[padding_mask]
 icetop_padding_y = allpixels_y[padding_mask]
 
-""" padding1_x = [np.sqrt(3)*i-np.sqrt(3)/2 for i in range(7)] + [-np.sqrt(3), 6*np.sqrt(3)] + [-3*np.sqrt(3)/2, 13*np.sqrt(3)/2] + [-2*np.sqrt(3), 7*np.sqrt(3)] + [-5*np.sqrt(3)/2, 15*np.sqrt(3)/2] + [-3*np.sqrt(3), 8*np.sqrt(3)] + [-5*np.sqrt(3)/2, 17*np.sqrt(3)/2] + [-2*np.sqrt(3), 8*np.sqrt(3)] + [-3*np.sqrt(3)/2, 15*np.sqrt(3)/2] + [-np.sqrt(3), 7*np.sqrt(3)] + [-np.sqrt(3)/2, 9*np.sqrt(3)/2, 11*np.sqrt(3)/2, 13*np.sqrt(3)/2] + [0, np.sqrt(3), 2*np.sqrt(3), 3*np.sqrt(3), 4*np.sqrt(3)]
-padding1_y = [-1.5 for i in range(7)] + [0.0, 0.0] + [1.5, 1.5] + [3.0, 3.0] + [4.5, 4.5] + [6.0, 6.0] + [7.5, 7.5] + [9.0, 9.0] + [10.5, 10.5] + [12.0, 12.0] + [13.5, 13.5, 13.5, 13.5] + [15.0, 15.0, 15.0, 15.0, 15.0]
-
-padding2_x = [np.sqrt(3)*i-np.sqrt(3) for i in range(8)] + [-3*np.sqrt(3)/2, 13*np.sqrt(3)/2] + [-2*np.sqrt(3), 7*np.sqrt(3)] + [-5*np.sqrt(3)/2, 15*np.sqrt(3)/2] + [-3*np.sqrt(3), 8*np.sqrt(3)] + [-7*np.sqrt(3)/2, 17*np.sqrt(3)/2] + [-4*np.sqrt(3), 9*np.sqrt(3)] + [-7*np.sqrt(3)/2, 19*np.sqrt(3)/2] + [-3*np.sqrt(3), 9*np.sqrt(3)] + [-5*np.sqrt(3)/2, 17*np.sqrt(3)/2] + [-2*np.sqrt(3), 8*np.sqrt(3)] + [-3*np.sqrt(3)/2, 15*np.sqrt(3)/2] + [-np.sqrt(3), 5*np.sqrt(3), 6*np.sqrt(3), 7*np.sqrt(3)] + [np.sqrt(3)*i-np.sqrt(3)/2 for i in range(6)]
-padding2_y = [-3.0 for i in range(8)] + [-1.5, -1.5] + [0.0, 0.0] + [1.5, 1.5] + [3.0, 3.0] + [4.5, 4.5] + [6.0, 6.0] + [7.5, 7.5] + [9.0, 9.0] + [10.5, 10.5] + [12.0, 12.0] + [13.5, 13.5] + [15.0, 15.0, 15.0, 15.0] + [16.5 for i in range(6)]
-
-padding3_x = [np.sqrt(3)*i-3*np.sqrt(3)/2 for i in range(9)] + [-2*np.sqrt(3), 7*np.sqrt(3)] + [-5*np.sqrt(3)/2, 15*np.sqrt(3)/2] + [-3*np.sqrt(3), 8*np.sqrt(3)] + [-7*np.sqrt(3)/2, 17*np.sqrt(3)/2] + [-4*np.sqrt(3), 9*np.sqrt(3)] + [-9*np.sqrt(3)/2, 19*np.sqrt(3)/2] + [-5*np.sqrt(3), 10*np.sqrt(3)] + [-9*np.sqrt(3)/2, 21*np.sqrt(3)/2] + [-4*np.sqrt(3), 10*np.sqrt(3)] + [-7*np.sqrt(3)/2, 19*np.sqrt(3)/2] + [-3*np.sqrt(3), 9*np.sqrt(3)] + [-5*np.sqrt(3)/2, 17*np.sqrt(3)/2] + [-2*np.sqrt(3), 8*np.sqrt(3)] + [-3*np.sqrt(3)/2, 11*np.sqrt(3)/2, 13*np.sqrt(3)/2, 15*np.sqrt(3)/2] + [i*np.sqrt(3) - np.sqrt(3) for i in range(7)]
-padding3_y = [-4.5 for i in range(9)] + [-3.0, -3.0] + [-1.5, -1.5] + [0.0, 0.0] + [1.5, 1.5] + [3.0, 3.0] + [4.5, 4.5] + [6.0, 6.0] + [7.5, 7.5] + [9.0, 9.0] + [10.5, 10.5] + [12.0, 12.0] + [13.5, 13.5] + [15.0, 15.0] + [16.5 for i in range(4)] + [18.0 for i in range(7)]
-
-padd = 2
-
-if padd == 1:
-    padding_x = padding1_x
-    padding_y = padding1_y
-elif padd == 2:
-    padding_x = padding1_x + padding2_x
-    padding_y = padding1_y + padding2_y
-elif padd == 3:
-    padding_x = padding1_x + padding2_x + padding3_x
-    padding_y = padding1_y + padding2_y + padding3_y
-else:
-    raise ValueError('Invalid padding option!') """
 
 padd = 2
 
