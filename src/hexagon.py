@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 def hex_corner(i: int, orientation: str, x, y, size):
     """
-    For two available orientation modes, calculate the position of a hexagon's corners around the center point (x,y). Size is the distance from the mid point to the corners
+    For two available orientation modes, calculate the position of a hexagon's ith corner around the center point (x,y). Size is the distance from the mid point to the corners
     """
     if orientation == 'pointy': # corner at the top
         angle = (60*i-30)*np.pi/180.0
@@ -18,19 +18,23 @@ class Hexagons:
     """
     Definition of hexagons based on a list of mid points, the size and orientation. Drawing function is available
     """
-    def __init__(self, axis, midpoints=[0, 0], size=1, orientation='pointy', color='k'):
+    def __init__(self, axis, midpoints=[0, 0], size=1, orientation='pointy', color='k', lw=2, fill=False):
+        self.ax = axis
         self.midpointsx = midpoints[0]
         self.midpointsy = midpoints[1]
         self.size = size
         self.orientation = orientation
         self.color = color
-        self.ax = axis
+        self.lw = lw
+        self.fill = fill
 
     def draw(self):
         for j in range(len(self.midpointsx)):
             corners = [hex_corner(i, self.orientation[j], self.midpointsx[j], self.midpointsy[j], self.size[j]) for i in range(6)]
             for i in range(6):
-                self.ax.plot([corners[i-1][0], corners[i][0]], [corners[i-1][1], corners[i][1]], color=self.color[j])
+                self.ax.plot([corners[i-1][0], corners[i][0]], [corners[i-1][1], corners[i][1]], color=self.color[j], linewidth=self.lw[j])
+            if self.fill[j]:
+                self.ax.fill([coords[0] for coords in corners], [coords[1] for coords in corners], color=self.color[j], alpha=0.25)
 
     def show(self, save=False, figfilename=''):
         self.ax.axis('equal')
